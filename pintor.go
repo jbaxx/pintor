@@ -1,4 +1,5 @@
-// Package pintor colorizes text printed to a terminal
+// Package pintor colorizes text printed to a terminal.
+// It applies format to the output using ANSI escape sequences.
 package pintor
 
 import (
@@ -40,10 +41,11 @@ const (
 )
 
 // Values that can be used to create a Formatter object.
+//
 // Default leaves the current format as it is.
-// Black, Red, Green, Yellow, Blue, Magenta, Cyan and White are the colors supported,
-// both for foreground and background color.
-// Bold, Italic and Underline are the modifiers supported.
+// Eight colors supported: Black, Red, Green, Yellow, Blue, Magenta, Cyan and White.
+// Colors apply for foreground and background color.
+// Modifiers supported: Bold, Italic and Underline.
 const (
 	Default = 0
 	Black   = 1 << iota
@@ -81,15 +83,22 @@ var bgUMap = map[uint]color{
 	White:   bgWhite,
 }
 
-// Formatter format the text output based on the
-// foreground, background and modifiers parameters.
+// Formatter formats the text output.
 type Formatter struct {
 	foreground uint
 	background uint
 	modifiers  uint
 }
 
-// NewFormatter returns a new Formatter
+// NewFormatter returns a new Formatter that can apply the colors and modifiers specified as parameters.
+// Predefined bits control the colors and modifiers.
+// Look at the package constant to get the colors and modifiers names.
+// Only accepts one color for foreground and one color for background.
+// To apply multiple modifiers at once set the modifiers parameter to:
+//
+// 		Bold|Italic
+//
+// This for example will apply both Bold and Italic to the text.
 func NewFormatter(foreground, background, modifiers uint) *Formatter {
 	return &Formatter{
 		foreground: foreground,
@@ -98,12 +107,13 @@ func NewFormatter(foreground, background, modifiers uint) *Formatter {
 	}
 }
 
-// Format applies the format defined at the Formatter.
-// It receives a string and returns a string with the formatting applied.
-func (f *Formatter) Format(texto string) string {
+// Format applies the format defined by the Formatter.
+// It receives the target string and returns the string with the formatting applied.
+// Formatting is performed using ANSI escape sequences.
+func (f *Formatter) Format(target string) string {
 	sequence := f.compile()
 	end := buildEscape([]color{reset})
-	return fmt.Sprintf("%s%s%s", sequence, texto, end)
+	return fmt.Sprintf("%s%s%s", sequence, target, end)
 }
 
 func (f *Formatter) compile() string {
