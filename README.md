@@ -1,11 +1,10 @@
 # Pintor
+[![Go Reference](https://pkg.go.dev/badge/github.com/jbaxx/pintor.svg)](https://pkg.go.dev/github.com/jbaxx/pintor)
 
-Pintor is a small package to colorize text output, for use in your Command Line applications.
-Pintor uses ANSI escape sequences to modify text.
+Pintor is a small package to colorize text output in your Command Line applications.
+Pintor applies ANSI escape sequences to modify text.
 
 ## Installation
-
-To install Pintor, 
 
 1. Install Pintor
 
@@ -21,7 +20,7 @@ import "github.com/jbaxx/pintor"
 
 ## Quick start
 Start by creating a formatter object passing the foreground and background colors, and modifiers as parameters.
-Then apply the format to a string, which will be properly ANSI escaped to print the desired colors.
+Then apply the format to a string, which will be properly ANSI escaped to print using the desired colors and modifiers.
 
 ```go
 package main
@@ -42,11 +41,15 @@ func main() {
 
 	fmt.Println(red.Format("This text is also red"))
 
-	whiteMagentaBold := pintor.NewFormatter(pintor.White, pintor.Magenta, pintor.Bold)
-	fmt.Println(whiteMagentaBold.Format("This text is bold, colored white with magenta foreground"))
+	whiteMagentaB := pintor.NewFormatter(pintor.White, pintor.Magenta, pintor.Bold)
+	fmt.Println(
+		whiteMagentaB.Format("This text is bold, colored white with magenta foreground"),
+	)
 
-	cyanBoldItalic := pintor.NewFormatter(pintor.Cyan, pintor.Default, pintor.Bold|pintor.Italic)
-	fmt.Println(cyanBoldItalic.Format("This text is bold and italic, colored cyan, and uses the default background"))
+	cyanBI := pintor.NewFormatter(pintor.Cyan, pintor.Default, pintor.Bold|pintor.Italic)
+	fmt.Println(
+		cyanBI.Format("This text is colored cyan, bold and italic, uses default background"),
+	)
 
 }
 ```
