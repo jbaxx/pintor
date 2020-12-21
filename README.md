@@ -43,12 +43,12 @@ func main() {
 
 	whiteMagentaB := pintor.NewFormatter(pintor.White, pintor.Magenta, pintor.Bold)
 	fmt.Println(
-		whiteMagentaB.Format("This text is bold, colored white with magenta foreground"),
+		whiteMagentaB.Format("This text is bold, colored white, magenta foreground"),
 	)
 
 	cyanBI := pintor.NewFormatter(pintor.Cyan, pintor.Default, pintor.Bold|pintor.Italic)
 	fmt.Println(
-		cyanBI.Format("This text is colored cyan, bold and italic, uses default background"),
+		cyanBI.Format("This text is bold and italic, colored cyan, default background"),
 	)
 
 }
