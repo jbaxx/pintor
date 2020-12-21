@@ -56,4 +56,4 @@ func main() {
 
 Will provide output similar to this
 
-![pintor terminal output](pintor_to.png)
+![pintor terminal output](pintor_toout.png)
