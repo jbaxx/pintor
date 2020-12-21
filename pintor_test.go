@@ -41,6 +41,7 @@ func TestFormat(t *testing.T) {
 		{name: "bold     ", text: "this line", escape: "\x1b[1m", modifiers: Bold},
 		{name: "italic   ", text: "this line", escape: "\x1b[3m", modifiers: Italic},
 		{name: "underline", text: "this line", escape: "\x1b[4m", modifiers: Underline},
+
 		// Mixing foreground and background
 		{name: "red fg black bg    ", text: "this line", escape: "\x1b[31;40m",
 			foreground: Red, background: Black},
@@ -48,6 +49,7 @@ func TestFormat(t *testing.T) {
 			foreground: Green, background: Magenta},
 		{name: "white fg cyan bg   ", text: "this line", escape: "\x1b[37;46m",
 			foreground: White, background: Cyan},
+
 		// Mixing foreground and background with multiple modifiers.
 		// The implementation by default puts the modifiers in ascending order.
 		{name: "fg + bg and Bold", text: "this line", escape: "\x1b[30;42;1m",
@@ -66,6 +68,10 @@ func TestFormat(t *testing.T) {
 			foreground: Black, background: Green, modifiers: Underline | Italic},
 		{name: "fg + bg and Bold + Italic + Underline", text: "this line", escape: "\x1b[30;42;1;3;4m",
 			foreground: Black, background: Green, modifiers: Bold | Italic | Underline},
+
+		// Empty lines
+		{name: "fg + empty line", text: "", escape: "\x1b[37m", foreground: White},
+		{name: "bg + empty line", text: "", escape: "\x1b[40m", background: Black},
 	}
 
 	checkFormat := func(t *testing.T, fg, bg, mo uint, text, escape string) {
