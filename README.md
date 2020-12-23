@@ -57,3 +57,10 @@ func main() {
 Will provide output similar to this
 
 ![pintor terminal output](pintor_toout.png)
+
+### Demo
+You can run a small demo that displays foreground, background and modifiers combinations, by executing at the root of the repository:
+
+```sh
+go run examples/main.go
+```
