@@ -1,5 +1,8 @@
-# Pintor
+# Pintor #
+
 [![Go Reference](https://pkg.go.dev/badge/github.com/jbaxx/pintor.svg)](https://pkg.go.dev/github.com/jbaxx/pintor)
+[![tests](https://github.com/jbaxx/pintor/actions/workflows/go_test.yml/badge.svg)](https://github.com/jbaxx/pintor/actions/workflows/go_test.yml)
+[![codecov](https://codecov.io/gh/jbaxx/pintor/branch/main/graph/badge.svg?token=484S146R1D)](https://codecov.io/gh/jbaxx/pintor)
 
 Pintor is a small package to colorize text output in your Command Line applications.
 Pintor applies ANSI escape sequences to modify text.
