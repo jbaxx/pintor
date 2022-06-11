@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/jbaxx/pintor"
 )
@@ -28,7 +29,22 @@ func PrintAllColors(text string, modifier uint) {
 	}
 }
 
+func printa() {
+	out, _ := os.Stdout.Stat()
+	var lol os.FileMode
+	lol = lol | os.ModeCharDevice
+	if (out.Mode() & os.ModeCharDevice) == 0 {
+		fmt.Printf("lol %#v\n", lol)
+		fmt.Printf("%#v\n", out.Mode())
+		fmt.Println("no terminal")
+	}
+	fmt.Printf("lol %#v\n", lol)
+	fmt.Println("terminal")
+	fmt.Printf("%#v\n\n", out.Mode())
+}
+
 func main() {
+	printa()
 	text := "Pizza!"
 
 	fmt.Println(pintor.NewFormatter(0, 0, 0).Format("Normal:"))

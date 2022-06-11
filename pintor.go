@@ -4,10 +4,31 @@ package pintor
 
 import (
 	"fmt"
+	"os"
 	"strconv"
 )
 
 const csi = "\x1b["
+
+var (
+	// outTTY indicates if standard output is a TTY
+	outTTY bool
+)
+
+func init() {
+	outTTY = isOutputTTY(os.Stdout)
+}
+
+// isOutputTTY determines if output is a TTY,
+// it's outcome is used by the outTTY variable
+// to print with fomatting only when a TTY is present in standard output
+func isOutputTTY(f *os.File) bool {
+	out, _ := f.Stat()
+	if (out.Mode() & os.ModeCharDevice) == 0 {
+		return false
+	}
+	return true
+}
 
 type color int
 
@@ -111,6 +132,9 @@ func NewFormatter(foreground, background, modifiers uint) *Formatter {
 // It receives the target string and returns the string with the formatting applied.
 // Formatting is performed using ANSI escape sequences.
 func (f *Formatter) Format(target string) string {
+	if !outTTY {
+		return target
+	}
 	sequence := f.compile()
 	end := buildEscape([]color{reset})
 	return fmt.Sprintf("%s%s%s", sequence, target, end)

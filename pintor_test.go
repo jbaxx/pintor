@@ -2,10 +2,17 @@ package pintor
 
 import (
 	"fmt"
+	"os"
 	"testing"
 )
 
 var endReset = "\x1b[0m"
+
+func init() {
+	// ensures tests are executed as seen by a TTY,
+	// unless overriden explicitly
+	outTTY = true
+}
 
 func TestFormat(t *testing.T) {
 
@@ -89,4 +96,84 @@ func TestFormat(t *testing.T) {
 		})
 	}
 
+}
+
+// var fs fileSystem = osFS{}
+//
+// type fileSystem interface {
+// 	Open(name string) (file, error)
+// 	Stat(name string) (os.FileInfo, error)
+// }
+//
+// type file interface {
+// 	io.Closer
+// 	io.Reader
+// 	io.ReaderAt
+// 	io.Seeker
+// 	Stat() (os.FileInfo, error)
+// }
+//
+// // osFS implements fileSystem using the local disk.
+// type osFS struct{}
+//
+// func (osFS) Open(name string) (file, error)        { return os.Open(name) }
+// func (osFS) Stat(name string) (os.FileInfo, error) { return os.Stat(name) }
+
+type mockedFS struct {
+	// osFS
+	*os.File
+	dasTTY bool
+}
+
+func (m mockedFS) Stat() (os.FileInfo, error) {
+	if m.dasTTY {
+		return &mockedFileInfo{asTTY: true}, nil
+	}
+	return &mockedFileInfo{asTTY: false}, nil
+}
+
+type mockedFileInfo struct {
+	os.FileInfo
+	asTTY bool
+}
+
+func (m *mockedFileInfo) Mode() os.FileMode {
+	var lol os.FileMode
+	if m.asTTY {
+		return lol | os.ModeCharDevice
+	}
+	return lol
+}
+
+func TestIsOutputTTY(t *testing.T) {
+
+	mfs := &mockedFS{}
+	// fs = mfs
+	// defer func() {
+	// 	fs = oldFS
+	// }()
+
+	fi, _ := mfs.Stat()
+	fmt.Printf("mfs: %#v\n", fi)
+	fm := NewFormatter(Magenta, 0, Bold)
+
+	// out, _ := os.Stdout.Stat()
+	// fmt.Printf("%#v\n", out.Mode())
+
+	// validate TTY output
+	_, op, _ := os.Pipe()
+	outTTY = isOutputTTY(os.Stdout)
+	got := fm.Format("Hello")
+	want := "\x1b[35;1m" + "Hello" + "\x1b[0m"
+	if got != want {
+		t.Errorf("got %#v want %#v", got, want)
+	}
+
+	// validate non-TTY output
+	outTTY = !isOutputTTY(op)
+	got = fm.Format("Hello")
+	want = "Hello"
+	if got != want {
+		t.Errorf("got %#v want %#v", got, want)
+	}
 }

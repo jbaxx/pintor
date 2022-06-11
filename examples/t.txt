@@ -1,0 +1,57 @@
+0x1a4no terminal
+terminal
+0x1a4Normal:
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+
+Bold:
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+
+Italic:
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+
+Underline:
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+
+Mixing! -> Bold + Italice + Underline:
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! Pizza! 
+
